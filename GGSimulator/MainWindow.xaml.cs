@@ -1214,7 +1214,7 @@ namespace GGSimulator
             pc2.Add(p6);
             pc2.Add(p7);
             pc2.Add(p8);
-            PolygonR2.Points = pc2;
+            PolygonL2.Points = pc2;
         }
 
         void setWaterWanneR()
@@ -1245,36 +1245,42 @@ namespace GGSimulator
             pc2.Add(p6);
             pc2.Add(p7);
             pc2.Add(p8);
-            PolygonL2.Points = pc2;
+            PolygonR2.Points = pc2;
         }
 
         void setWaterZylinderL()
         {
+            ZylinderLE1Fill.Opacity = 0.3;
+            ZylinderLE2Fill.Opacity = 0.3;
             double höhe = VZylinderL / (Math.PI * Math.Pow(RadiusL / 10, 2));
             ZylinderLFill.Height = 20 * höhe;
             Canvas.SetTop(ZylinderLFill, 800 - 20 * höhe);
-            if(höhe >= 0)
+            if(höhe > 0)
             {
                 Canvas.SetTop(ZylinderLE1Fill, 785 - 20 * höhe);
             }
             else
             {
-                Canvas.SetTop(ZylinderLE1Fill, 385);
+                ZylinderLE1Fill.Opacity = 0;
+                ZylinderLE2Fill.Opacity = 0;
             }
         }
 
         void setWaterZylinderR()
         {
+            ZylinderRE1Fill.Opacity = 0.3;
+            ZylinderRE2Fill.Opacity = 0.3;
             double höhe = VZylinderR / (Math.PI * Math.Pow(RadiusR / 10, 2));
             ZylinderRFill.Height = 20 * höhe;
             Canvas.SetTop(ZylinderRFill, 800 - 20 * höhe);
-            if(höhe >= 0)
+            if(höhe > 0)
             {
                 Canvas.SetTop(ZylinderRE1Fill, 785 - 20 * höhe);
             }
             else
             {
-                Canvas.SetTop(ZylinderRE1Fill, 385);
+                ZylinderRE1Fill.Opacity = 0;
+                ZylinderRE2Fill.Opacity = 0;
             }
             
         }
